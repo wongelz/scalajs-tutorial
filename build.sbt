@@ -1,4 +1,4 @@
-enablePlugins(ScalaJSPlugin)
+enablePlugins(ScalaJSPlugin, SbtWeb)
 
 name := "Scala.js Tutorial"
 scalaVersion := "2.12.4"
@@ -12,6 +12,8 @@ libraryDependencies += "org.querki" %%% "jquery-facade" % "1.2"
 skip in packageJSDependencies := false
 jsDependencies +=
   "org.webjars" % "jquery" % "2.2.1" / "jquery.js" minified "jquery.min.js"
+
+JsEngineKeys.engineType := JsEngineKeys.EngineType.Trireme
 
 jsEnv := new org.scalajs.jsenv.jsdomnodejs.JSDOMNodeJSEnv()
 
